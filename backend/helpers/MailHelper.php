@@ -11,11 +11,11 @@ class MailHelper {
             $mail = new PHPMailer(true);
 
             // Server settings
-            $mail->SMTPDebug = 0; // change to 2 for debugging
+            $mail->SMTPDebug = 0; // 
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = "opololinda@gmail.com"; // Gmail or .env
+            $mail->Username   = "opololinda@gmail.com"; // Gmail
             $mail->Password   =  "rdfx yfyg sxme ojra";   // Gmail App Password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;
@@ -37,7 +37,7 @@ class MailHelper {
             return true;
 
         } catch (Exception $e) {
-            // Log error but do not throw
+         
             error_log("Mailer failed: " . $e->getMessage());
             return false;
         }

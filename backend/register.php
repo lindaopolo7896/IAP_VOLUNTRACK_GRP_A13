@@ -9,7 +9,7 @@ use Helpers\MailHelper;
 
 header('Content-Type: application/json');
 
-// Get raw POST data
+// Get  POST data
 $raw = file_get_contents("php://input");
 error_log("Raw POST data: " . $raw);
 $data = json_decode($raw, true);
@@ -51,7 +51,7 @@ $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (
 $stmt->bind_param("ssss", $name, $email, $password, $role);
 
 if ($stmt->execute()) {
-    // Send welcome email safely
+    // Send welcome email 
     $emailSent = MailHelper::sendWelcomeEmail($email, $name);
 
     echo json_encode([
