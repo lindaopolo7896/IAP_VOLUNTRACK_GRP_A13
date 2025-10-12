@@ -63,7 +63,7 @@ function Login() {
           return;
         }
 
-        // ✅ Temporarily save user + token for OTP flow
+        // Temporarily save user + token for OTP flow
         sessionStorage.setItem("pending_user", JSON.stringify(data.user));
         sessionStorage.setItem("pending_token", data.token);
 
