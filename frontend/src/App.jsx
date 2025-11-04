@@ -24,6 +24,13 @@ import AdminReports from "./pages/admin/AdminReports";
 import AdminEvents from "./pages/admin/AdminEvents";
 import AdminHome from "./pages/admin/AdminHome";
 import VerifyUser from "./components/main/VerifyUser";
+import DashboardOrg from "./pages/organization/dashboardOrg";
+import ApplicationsOrg from "./pages/organization/applicationsOrg";
+import HistoryOrg from "./pages/organization/historyOrg";
+import SettingsOrg from "./pages/organization/settingsOrg";
+import MessagesOrg from "./pages/organization/messagesOrg";
+import OpportunitiesOrg from "./pages/organization/opportunitiesOrg";
+
 
 function App() {
   return (
@@ -51,7 +58,7 @@ function App() {
               <Route path="account" element={<AccountPage />} />
             </Route>
           </Route>
-          <Route path="/dashboard-admin" element={<DashboardLayoutAdmin/>}>
+          <Route path="/dashboard-admin" element={<DashboardLayoutAdmin/>} />
            <Route index element={<AdminHome />} /> 
             <Route path="home" element={<AdminHome />} />
            <Route path="organisations" element={<AdminOrganisations/>}/>
@@ -63,6 +70,12 @@ function App() {
             <Route path="organisations" element={<AdminOrganisations />} />
             <Route path="reports" element={<AdminReports />} />
             <Route path="events" element={<AdminEvents />} />
+          <Route path="/dashboard/organization" element={<DashboardOrg/>}/>
+          <Route path="opportunities" element={<OpportunitiesOrg/>}/> 
+          <Route path="applications" element={<ApplicationsOrg/>}/>
+          <Route path="history" element={<HistoryOrg/>}/>
+          <Route path="messages" element={<MessagesOrg/>}/>
+          <Route path="settings" element={<SettingsOrg/>}/>
           </Route>
         </Routes>
       </Router>
