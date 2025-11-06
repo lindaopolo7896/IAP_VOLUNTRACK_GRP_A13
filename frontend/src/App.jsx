@@ -24,6 +24,7 @@ import AdminReports from "./pages/admin/AdminReports";
 import AdminEvents from "./pages/admin/AdminEvents";
 import AdminHome from "./pages/admin/AdminHome";
 import VerifyUser from "./components/main/VerifyUser";
+import DashboardLayoutOrg from "../layouts/DashboardLayoutOrg";
 import DashboardOrg from "./pages/organization/dashboardOrg";
 import ApplicationsOrg from "./pages/organization/applicationsOrg";
 import HistoryOrg from "./pages/organization/historyOrg";
@@ -65,12 +66,8 @@ function App() {
            <Route path="reports" element={<AdminReports/>}/>
            <Route path="events" element={<AdminEvents/>}/>
 
-          <Route path="/dashboard/admin" element={<DashboardLayoutAdmin />}>
-            <Route index element={<AdminHome />} />
-            <Route path="organisations" element={<AdminOrganisations />} />
-            <Route path="reports" element={<AdminReports />} />
-            <Route path="events" element={<AdminEvents />} />
-          <Route path="/dashboard/organization" element={<DashboardOrg/>}/>
+          <Route path="/dashboard/organization" element={<DashboardLayoutOrg/>}>
+          <Route index element={<DashboardOrg/>}/>
           <Route path="opportunities" element={<OpportunitiesOrg/>}/> 
           <Route path="applications" element={<ApplicationsOrg/>}/>
           <Route path="history" element={<HistoryOrg/>}/>

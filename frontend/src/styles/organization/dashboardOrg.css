@@ -1,0 +1,49 @@
+.dashboard-container {
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.summary-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+}
+
+.summary-card h3 {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.chart-title {
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dashboard-container {
+    background-color: #111827;
+  }
+
+  .summary-card {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+
+  .chart-title {
+    color: #f9fafb;
+  }
+}

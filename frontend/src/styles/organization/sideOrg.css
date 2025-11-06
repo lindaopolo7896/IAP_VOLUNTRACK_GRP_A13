@@ -1,0 +1,28 @@
+@import './baseOrg.css';
+
+.sidebar-org {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.logo-org {
+  width: 100px;
+  margin-bottom: var(--mb-6);
+}
+
+.sideElements-org {
+  @apply flex items-center gap-4 p-4 rounded-lg text-base font-medium;
+  color: var(--text-secondary);
+}
+
+.sideElements-org.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.dash-icon-org {
+  width: 24px;
+  height: 24px;
+}
