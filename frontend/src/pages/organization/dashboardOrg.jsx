@@ -20,9 +20,9 @@ const chartData = [
 
 const DashboardOrg = () => {
   return (
-    <div className="dashboard-container p-8">
+    <div className="dashboard-container">
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-3">
         <div className="summary-card">
           <h3>Total Volunteers</h3>
           <p>1200</p>
@@ -40,8 +40,8 @@ const DashboardOrg = () => {
       </div>
 
       {/* Bar Chart */}
-      <div className="chart-card p-8 bg-white rounded-2xl shadow-md">
-        <h2 className="chart-title mb-8">Total Volunteer Hours by Opportunity</h2>
+      <div className="chart-card">
+        <h2 className="chart-title">Total Volunteer Hours by Opportunity</h2>
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />

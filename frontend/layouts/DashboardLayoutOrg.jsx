@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SidebarOrg from "../src/components/organization/sidebarOrg";
 import TopBarOrg from "../src/components/organization/topbarOrg";
 import { Outlet, useLocation } from "react-router-dom";
-import "../src/styles/volunteer/DashboardVol.css";
+import "../src/styles/organization/dashboardLayoutOrg.css";
 
 function DashboardLayoutOrg() {
   const location = useLocation();

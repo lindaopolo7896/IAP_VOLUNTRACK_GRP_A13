@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9920b5e1-ac62-48a5-bfed-f5a8ec0ab348" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/volunteer/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/volunteer/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/volunteer/SettingsVolPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/organization/baseOrg.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/organization/sideOrg.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/organization/sideOrg.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +17,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="350HrLhrnISqBV9Nv15VMSzHiLM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,10 +29,11 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "mikeb",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/home/brians-linux/Documents/Internet Application Programming/project 2/IAP_VOLUNTRACK_GRP_A13",
     "node.js.detected.package.eslint": "true",
@@ -60,7 +59,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762240266157</updated>
-      <workItem from="1762240267392" duration="2365000" />
+      <workItem from="1762240267392" duration="15463000" />
+      <workItem from="1762450342863" duration="139000" />
+      <workItem from="1762450500376" duration="1115000" />
+      <workItem from="1762451635906" duration="2683000" />
     </task>
     <servers />
   </component>

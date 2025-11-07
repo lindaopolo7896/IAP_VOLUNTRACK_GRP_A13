@@ -1,49 +1,114 @@
 .dashboard-container {
   background-color: #f9fafb;
   min-height: 100vh;
+  padding: 2rem;
+  padding-top: 100px; /* Account for fixed topbar */
 }
 
 .summary-card {
   background-color: #ffffff;
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .summary-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .summary-card h3 {
   color: #6b7280;
   font-size: 0.875rem;
+  font-weight: 500;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .summary-card p {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: #111827;
+  margin: 0;
+}
+
+.chart-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
 }
 
 .chart-title {
   color: #111827;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Grid system for cards */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Dark mode */
+body.dark-mode .dashboard-container {
+  background-color: #191725;
+}
+
+body.dark-mode .summary-card,
+body.dark-mode .chart-card {
+  background-color: #252235;
+  color: #f9fafb;
+}
+
+body.dark-mode .summary-card h3 {
+  color: #9ca3af;
+}
+
+body.dark-mode .summary-card p {
+  color: #f9fafb;
+}
+
+body.dark-mode .chart-title {
+  color: #f9fafb;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
   .dashboard-container {
-    background-color: #111827;
+    padding: 1rem;
+    padding-top: 100px;
   }
-
-  .summary-card {
-    background-color: #1f2937;
-    color: #f9fafb;
+  
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-
-  .chart-title {
-    color: #f9fafb;
+  
+  .chart-card {
+    padding: 1rem;
   }
 }
