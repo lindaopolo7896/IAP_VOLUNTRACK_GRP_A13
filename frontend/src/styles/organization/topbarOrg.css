@@ -1,34 +1,83 @@
-.topbar {
+/* TopBar specific styles - no inline styles */
+
+.topbar-container {
   position: fixed;
   top: 0;
-  left: 280px;
+  left: 20rem;
   right: 0;
-  height: 80px;
+  height: 5rem;
   background-color: #ffffff;
-  color: #1f2937;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
-  padding: 0 2rem;
+  border-bottom: 1px solid hsl(var(--border));
+  z-index: 50;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  justify-content: space-between;
 }
 
-.create-btn {
-  background-color: #1e3a8a;
+.dark .topbar-container {
+  background-color: #191725;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff;
+}
+
+.dark .topbar-icon {
+  color: #ffffff;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.topbar-logo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background-color: #1e5a8e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-logo-text {
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
-.create-btn:hover {
-  background-color: #1e40af;
+.topbar-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.topbar-create-btn {
+  border-radius: 9999px !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  font-weight: 500 !important;
+  background-color: #1e5a8e !important;
+  color: white !important;
+  text-transform: none !important;
+}
+
+.topbar-create-btn:hover {
+  background-color: #1a4d78 !important;
 }
 
 .topbar-right {
@@ -37,102 +86,26 @@
   gap: 1rem;
 }
 
-.icon-btn {
-  border: none;
-  background-color: transparent;
-  color: #374151;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.topbar-icon-btn {
+  border-radius: 9999px !important;
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+.topbar-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: hsl(var(--foreground));
+}
+
+.topbar-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--muted));
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.icon-btn:hover {
-  background-color: #f3f4f6;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-}
-
-.notification-btn {
-  position: relative;
-  border: none;
-  background-color: transparent;
-  color: #374151;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.notification-btn:hover {
-  background-color: #f3f4f6;
-}
-
-.notif-dot {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 8px;
-  height: 8px;
-  background-color: #ef4444;
-  border-radius: 50%;
-  border: 2px solid white;
-}
-
-.profile-btn {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  padding: 0;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: opacity 0.2s ease;
-}
-
-.profile-btn:hover {
-  opacity: 0.8;
-}
-
-.profile-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Dark mode */
-body.dark-mode .topbar {
-  background-color: #191725;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .icon-btn,
-body.dark-mode .notification-btn {
-  color: #9ca3af;
-}
-
-body.dark-mode .icon-btn:hover,
-body.dark-mode .notification-btn:hover {
-  background-color: #252235;
-}
-
-body.dark-mode .notif-dot {
-  border-color: #191725;
-}
-
-@media screen and (max-width: 912px) {
-  .topbar {
-    left: 0;
-    width: 100%;
-  }
+  color: hsl(var(--foreground));
+  font-weight: 600;
 }

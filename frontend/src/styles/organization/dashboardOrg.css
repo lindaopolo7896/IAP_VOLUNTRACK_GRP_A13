@@ -1,114 +1,120 @@
+/* Dashboard specific styles - no inline styles */
+
 .dashboard-container {
-  background-color: #f9fafb;
-  min-height: 100vh;
   padding: 2rem;
-  padding-top: 100px; /* Account for fixed topbar */
 }
 
-.summary-card {
-  background-color: #ffffff;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.summary-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.summary-card h3 {
-  color: #6b7280;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
-
-.summary-card p {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0;
-}
-
-.chart-card {
-  background-color: #ffffff;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
-}
-
-.chart-title {
-  color: #111827;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-/* Grid system for cards */
-.grid {
+.dashboard-stats {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+.dashboard-stat-card {
+  padding: 1.5rem;
+  background-color: #ffffff !important;
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.dark .dashboard-stat-card {
+  background-color: #252235 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff;
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.dark .dashboard-container .dashboard-chart-card .dashboard-chart-title {
+  color: #ffffff;
 }
 
-/* Dark mode */
-body.dark-mode .dashboard-container {
-  background-color: #191725;
+.dashboard-stat-label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
 }
 
-body.dark-mode .summary-card,
-body.dark-mode .chart-card {
-  background-color: #252235;
-  color: #f9fafb;
+.dashboard-stat-value {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
 }
 
-body.dark-mode .summary-card h3 {
-  color: #9ca3af;
+.dashboard-chart-card {
+  padding: 2rem;
+  background-color: #ffffff !important;
 }
 
-body.dark-mode .summary-card p {
-  color: #f9fafb;
+.dark .dashboard-chart-card {
+  background-color: #252235 !important;
 }
 
-body.dark-mode .chart-title {
-  color: #f9fafb;
+.dashboard-chart-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 2rem;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .grid-cols-3 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.dashboard-table-card {
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: #ffffff !important;
 }
 
-@media (max-width: 640px) {
-  .dashboard-container {
-    padding: 1rem;
-    padding-top: 100px;
-  }
-  
-  .grid-cols-2,
-  .grid-cols-3 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  
-  .chart-card {
-    padding: 1rem;
-  }
+.dark .dashboard-table-card {
+  background-color: #252235 !important;
+}
+
+.dashboard-table-wrapper {
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+}
+
+.dashboard-table-header-row {
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.dashboard-table-header {
+  text-align: left;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.dashboard-table-row {
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.dashboard-table-cell {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: hsl(var(--foreground));
+}
+
+.dashboard-view-btn {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  border-radius: 9999px !important;
+  background-color: #0f1b33 !important;
+  color: white !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  text-transform: none !important;
+}
+
+.dashboard-view-btn:hover {
+  background-color: #1a2847 !important;
 }

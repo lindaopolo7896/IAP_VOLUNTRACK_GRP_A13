@@ -1,5 +1,4 @@
-import React from "react";
-import { Card, CardContent, CardActions, Typography, Button, Grid } from "@mui/material";
+import { Card, CardContent, Button } from "@mui/material";
 import { toast } from "sonner";
 import "../../styles/organization/opportunitiesOrg.css";
 
@@ -15,8 +14,7 @@ const opportunities = [
     deadline: "12/06/2026",
     benefits: "None",
     skills: "React, TypeScript",
-    description:
-      "We are looking for a frontend developer to help build our new volunteer platform.",
+    description: "We are looking for a frontend developer to help build our new volunteer platform.",
   },
   {
     id: 2,
@@ -29,71 +27,66 @@ const opportunities = [
     deadline: "14/06/2026",
     benefits: "Free lunch",
     skills: "Node.js, Express",
-    description:
-      "We are looking for a backend developer to help build our new volunteer platform.",
+    description: "We are looking for a backend developer to help build our new volunteer platform.",
   },
 ];
 
 const OpportunitiesOrg = () => {
-  const handleApply = (id) => {
-    toast.success(`Application submitted for opportunity ${id}`);
+  const handleApply = (opportunityId) => {
+    toast.success(`Application submitted for opportunity ${opportunityId}`);
   };
 
   return (
     <div className="opportunities-container">
-      <Grid container spacing={3}>
+      <div className="opportunities-list">
         {opportunities.map((opportunity) => (
-          <Grid item xs={12} md={6} key={opportunity.id}>
-            <Card className="opportunity-card">
-              <CardContent>
-                <Typography variant="h6" className="opportunity-title">
-                  {opportunity.title}
-                </Typography>
-
-                <div className="opportunity-info">
-                  <Typography variant="body2">
-                    <strong>Volunteers Needed:</strong> {opportunity.volunteers}
-                  </Typography>
-                  <Typography variant="body2">
-                    <strong>Hours:</strong> {opportunity.hours}
-                  </Typography>
-                  <Typography variant="body2">
-                    <strong>Start Date:</strong> {opportunity.startDate}
-                  </Typography>
-                  <Typography variant="body2">
-                    <strong>End Date:</strong> {opportunity.endDate}
-                  </Typography>
-                  <Typography variant="body2">
-                    <strong>Location:</strong> {opportunity.location}
-                  </Typography>
-                  <Typography variant="body2">
-                    <strong>Deadline:</strong> {opportunity.deadline}
-                  </Typography>
-                  <Typography variant="body2">
-                    <strong>Benefits:</strong> {opportunity.benefits}
-                  </Typography>
-                  <Typography variant="body2">
-                    <strong>Skills:</strong> {opportunity.skills}
-                  </Typography>
-                  <Typography variant="body2" className="opportunity-description">
-                    {opportunity.description}
-                  </Typography>
+          <Card key={opportunity.id} className="opportunity-card">
+            <CardContent>
+              <div className="opportunity-content">
+                <div className="opportunity-details">
+                  <h3 className="opportunity-title">{opportunity.title}</h3>
+                  <div className="opportunity-info-list">
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Volunteers Needed:</span> {opportunity.volunteers}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Hours:</span> {opportunity.hours}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Start Date:</span> {opportunity.startDate}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">End Date:</span> {opportunity.endDate}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Location:</span> {opportunity.location}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Deadline:</span> {opportunity.deadline}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Benefits:</span> {opportunity.benefits}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Skills:</span> {opportunity.skills}
+                    </p>
+                    <p className="opportunity-info-item">
+                      <span className="opportunity-info-label">Description:</span> {opportunity.description}
+                    </p>
+                  </div>
                 </div>
-              </CardContent>
-
-              <CardActions className="opportunity-actions">
-                <Button
-                  variant="contained"
-                  className="apply-btn"
+                <Button 
                   onClick={() => handleApply(opportunity.id)}
+                  variant="contained"
+                  className="opportunity-apply-btn"
                 >
                   Apply Now
                 </Button>
-              </CardActions>
-            </Card>
-          </Grid>
+              </div>
+            </CardContent>
+          </Card>
         ))}
-      </Grid>
+      </div>
     </div>
   );
 };

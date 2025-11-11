@@ -1,72 +1,73 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Logo from "../../assets/logo-dark.png";
-import Applications from '../../assets/applications-icon.svg';
-import Opportunities from '../../assets/opportunities-icon.svg';
-import Messages from '../../assets/messages-icon.svg';
-import History from '../../assets/history-icon.svg';
-import Settings from '../../assets/settings-icon.svg';
-import Dashboard from '../../assets/dashboard-icon.svg';
-import '../../styles/organization/sideOrg.css';
+import { LayoutDashboard, Search, Folder, Clock, MessageSquare, Settings } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "../../styles/organization/sidebarOrg.css";
+import Logo from "../../assets/logo.png";
+import LogoDark from "../../assets/logo-dark.png";
 
-function SidebarOrg() {
+const SidebarOrg = () => {
+  const location = useLocation();
+  const [darkMode, setDarkMode] = useState(false);
+  
+  useEffect(() => {
+    // Check if dark mode is active on mount
+    const isDark = document.documentElement.classList.contains("dark");
+    setDarkMode(isDark);
+    
+    // Listen for dark mode changes
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setDarkMode(isDark);
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+  
+  const navItems = [
+    { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard/organization" },
+    { icon: Search, label: "Opportunities", path: "/dashboard/organization/opportunities" },
+    { icon: Folder, label: "Applications", path: "/dashboard/organization/applications" },
+    { icon: Clock, label: "History", path: "/dashboard/organization/history" },
+    { icon: MessageSquare, label: "Messages", path: "/dashboard/organization/messages" },
+    { icon: Settings, label: "Settings", path: "/dashboard/organization/settings" },
+  ];
+
   return (
-    <div className="sidebar-org">
-      <img src={Logo} alt="logo" className="logo-org" />
-      <div className="org-name">
-        <h2>VolunTrack</h2>
+    <aside className="sidebar-container">
+      <div>
+        <div className="sidebar-logo">
+          {darkMode ? (
+            <img src={Logo} alt="VolunTrack Logo" className="sidebar-logo-image" />
+          ) : (
+            <img src={LogoDark} alt="VolunTrack Logo" className="sidebar-logo-image" />
+          )}
+        </div>
       </div>
       
-      <NavLink 
-        to="/dashboard/organization" 
-        className={({ isActive }) => isActive ? "sideElements-org active" : "sideElements-org"}
-        end
-      >
-        <img src={Dashboard} alt="dashboard-icon" className="dash-icon-org" />
-        <p>Dashboard</p>
-      </NavLink>
-
-      <NavLink 
-        to="/dashboard/organization/opportunities" 
-        className={({ isActive }) => isActive ? "sideElements-org active" : "sideElements-org"}
-      >
-        <img src={Opportunities} alt="opportunities-icon" className="dash-icon-org" />
-        <p>Opportunities</p>
-      </NavLink>
-
-      <NavLink 
-        to="/dashboard/organization/applications" 
-        className={({ isActive }) => isActive ? "sideElements-org active" : "sideElements-org"}
-      >
-        <img src={Applications} alt="applications-icon" className="dash-icon-org" />
-        <p>Applications</p>
-      </NavLink>
-
-      <NavLink 
-        to="/dashboard/organization/messages" 
-        className={({ isActive }) => isActive ? "sideElements-org active" : "sideElements-org"}
-      >
-        <img src={Messages} alt="messages-icon" className="dash-icon-org" />
-        <p>Messages</p>
-      </NavLink>
-
-      <NavLink 
-        to="/dashboard/organization/history" 
-        className={({ isActive }) => isActive ? "sideElements-org active" : "sideElements-org"}
-      >
-        <img src={History} alt="history-icon" className="dash-icon-org" />
-        <p>History</p>
-      </NavLink>
-
-      <NavLink 
-        to="/dashboard/organization/settings" 
-        className={({ isActive }) => isActive ? "sideElements-org active" : "sideElements-org"}
-      >
-        <img src={Settings} alt="settings-icon" className="dash-icon-org" />
-        <p>Settings</p>
-      </NavLink>
-    </div>
+      <nav className="sidebar-nav">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = location.pathname === item.path;
+          
+          return (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`sidebar-nav-link ${isActive ? 'sidebar-nav-active' : ''}`}
+            >
+              <Icon className="sidebar-nav-icon" />
+              <span className="sidebar-nav-label">{item.label}</span>
+            </Link>
+          );
+        })}
+      </nav>
+    </aside>
   );
-}
+};
 
 export default SidebarOrg;

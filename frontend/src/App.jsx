@@ -24,7 +24,7 @@ import AdminReports from "./pages/admin/AdminReports";
 import AdminEvents from "./pages/admin/AdminEvents";
 import AdminHome from "./pages/admin/AdminHome";
 import VerifyUser from "./components/main/VerifyUser";
-import DashboardLayoutOrg from "../layouts/DashboardLayoutOrg";
+import DashboardLayoutOrg from "../layouts/DashboardLayoutOrganization";
 import DashboardOrg from "./pages/organization/dashboardOrg";
 import ApplicationsOrg from "./pages/organization/applicationsOrg";
 import HistoryOrg from "./pages/organization/historyOrg";
@@ -81,3 +81,4 @@ function App() {
 }
 
 export default App;
+

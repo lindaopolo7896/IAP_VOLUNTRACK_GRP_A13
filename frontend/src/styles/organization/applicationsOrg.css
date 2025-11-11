@@ -1,75 +1,75 @@
+/* Applications page specific styles - no inline styles */
+
 .applications-container {
-  background-color: #e9ebf8;
-  width: 881px;
-  padding: 20px;
+  padding: 2rem;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .application-card {
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: #ffffff !important;
 }
 
-.application-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.dark .application-card {
+  background-color: #252235 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff;
 }
 
-.btn-outline {
-  border: 1px solid #d1d5db;
-  background-color: transparent;
-  color: #374151;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+.application-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.application-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.application-position {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.application-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
   font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.application-info-item {
+  color: hsl(var(--foreground));
+}
+
+.application-label {
   font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.btn-outline:hover {
-  background-color: #f3f4f6;
-}
-
-.btn-primary {
-  background-color: #2563eb;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #1e40af;
+.application-cv-btn {
+  margin-top: 1rem;
 }
 
 .btn-success {
-  background-color: #10b981;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+  background-color: hsl(var(--success)) !important;
+  color: hsl(var(--success-foreground)) !important;
 }
 
 .btn-success:hover {
-  background-color: #0d9f6e;
+  background-color: hsl(var(--success) / 0.9) !important;
 }
 
-.btn-danger {
-  background-color: #ef4444;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
-}
-
-.btn-danger:hover {
-  background-color: #dc2626;
+.application-actions {
+  display: flex;
+  gap: 0.75rem;
 }

@@ -1,46 +1,67 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Bell, Moon } from "lucide-react";
-import profileIcon from "../../assets/profile-icon.png";
+import { useState, useEffect } from "react";
+import { Moon, Sun, Bell } from "lucide-react";
+import { IconButton, Button } from "@mui/material";
+import CreateOpportunityDialog from "./createopportunityform.jsx"
 import "../../styles/organization/topbarOrg.css";
 
-export default function TopbarOrg() {
+const TopBarOrg = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const navigate = useNavigate();
+  const [showCreateDialog, setShowCreateDialog] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode");
-  };
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
-  const handleCreateOpportunity = () => {
-    // Navigate to your create opportunity form
-    navigate("/dashboard/organization/opportunities/create");
+  const toggleTheme = () => {
+    const newTheme = !darkMode;
+    setDarkMode(newTheme);
+    if (newTheme) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
   };
 
   return (
-    <header className="topbar">
-      <button className="create-btn" onClick={handleCreateOpportunity}>
-        Create New Opportunity
-      </button>
-
-      <div className="topbar-right">
-        <button className="icon-btn" onClick={toggleDarkMode}>
-          <Moon className="icon" />
-        </button>
-
-        <button className="notification-btn">
-          <Bell className="icon" />
-          <span className="notif-dot"></span>
-        </button>
-
-        <button
-          className="profile-btn"
-          onClick={() => navigate("/dashboard/organization/settings")}
+    <header className="topbar-container">
+      <div className="topbar-left">
+        <Button 
+          className="topbar-create-btn"
+          variant="contained"
+          onClick={() => setShowCreateDialog(true)}
         >
-          <img src={profileIcon} alt="Profile" className="profile-img" />
-        </button>
+          Create New Opportunity
+        </Button>
       </div>
+      
+      <div className="topbar-right">
+        <IconButton
+          onClick={toggleTheme}
+          className="topbar-icon-btn"
+        >
+          {darkMode ? (
+            <Sun className="topbar-icon" />
+          ) : (
+            <Moon className="topbar-icon" />
+          )}
+        </IconButton>
+        <IconButton className="topbar-icon-btn">
+          <Bell className="topbar-icon" />
+        </IconButton>
+        <div className="topbar-avatar">
+          VO
+        </div>
+      </div>
+      
+      <CreateOpportunityDialog open={showCreateDialog} onOpenChange={setShowCreateDialog} />
     </header>
   );
-}
+};
+
+export default TopBarOrg;
