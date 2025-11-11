@@ -9,7 +9,6 @@ const SettingsOrg = () => {
   const tabs = [
     { id: "profile", label: "Profile", icon: User },
     { id: "contacts", label: "Contacts", icon: Users },
-    { id: "supporters", label: "Supporters", icon: Heart },
     { id: "account", label: "Account", icon: Lock },
   ];
 
@@ -216,15 +215,6 @@ const SettingsOrg = () => {
                     Save Changes
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
-          )}
-
-          {activeTab === "supporters" && (
-            <Card className="settings-card">
-              <CardContent>
-                <h2 className="settings-title">Supporters</h2>
-                <p className="settings-description">Manage your organization supporters and donors here.</p>
               </CardContent>
             </Card>
           )}
