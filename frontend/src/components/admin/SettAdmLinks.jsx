@@ -9,7 +9,7 @@ function SettAdmLinks() {
   return (
     <div className="settingVolNav">
       <NavLink
-        to="/dashboard/admin/settings/profile"
+        to="/dashboard/admin/settings"
         end
         className={({ isActive }) => (isActive ? "btn active" : "btn")}
       >
