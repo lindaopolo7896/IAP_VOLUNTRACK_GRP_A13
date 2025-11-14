@@ -107,7 +107,7 @@
 }
 
 .avatar-buttons button:last-child:hover {
-  background-color: #334155;
+  background-color: #4f545c;
 }
 
 /* === Profile Form === */
@@ -148,7 +148,7 @@
 }
 
 .form-field input::placeholder {
-  color: #94a3b8;
+  color: #7b8090;
 }
 
 .form-field input:focus {
